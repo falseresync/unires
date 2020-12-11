@@ -13,6 +13,6 @@ public class UniresPreGen implements RRPPreGenEntrypoint {
     public void pregen() {
         RequestManagerImpl requestManager = new RequestManagerImpl();
 
-        UniresRegistryImpl.fillRegistries(requestManager);
+        UniresRegistryImpl.callApiEntrypoints(requestManager);
     }
 }

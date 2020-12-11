@@ -13,7 +13,7 @@ import ru.falseresync.unires.api.resource.Resource;
 import ru.falseresync.unires.api.resource.ResourceType;
 import ru.falseresync.unires.api.resource.ResourceFeature;
 
-public class UniresRegistryImpl<T> extends SimpleRegistry<T> implements UniresRegistry<T> {
+class UniresRegistryImpl<T> extends SimpleRegistry<T> implements UniresRegistry<T> {
     static final UniresRegistry<ResourceFeature> RESOURCE_FEATURES = new UniresRegistryImpl<>(
         RegistryKey.ofRegistry(new Identifier("unires", "resource/features")),
         Lifecycle.experimental()
@@ -33,7 +33,7 @@ public class UniresRegistryImpl<T> extends SimpleRegistry<T> implements UniresRe
         super(registryKey, lifecycle);
     }
 
-    public static void fillRegistries(RequestManager requestManager) {
+    static void callApiEntrypoints(RequestManager requestManager) {
         FabricLoader.getInstance().getEntrypoints("unires", UniresApi.class).stream().parallel().forEach(api -> {
             api.registerFeatures(RESOURCE_FEATURES);
             api.registerResourceTypes(RESOURCE_TYPES);

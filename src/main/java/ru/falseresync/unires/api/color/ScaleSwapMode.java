@@ -1,8 +1,10 @@
 package ru.falseresync.unires.api.color;
 
+import java.util.function.IntUnaryOperator;
+
 public class ScaleSwapMode implements BlendingMode {
     @Override
-    public int applyAsInt(int left, int right) {
-        return 0;
+    public IntUnaryOperator getPixelColorTransformer(int tint) {
+        return null;
     }
 }
