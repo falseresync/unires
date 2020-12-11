@@ -1,0 +1,44 @@
+{
+  "schemaVersion": 1,
+  "id": "unires",
+  "version": "${version}",
+
+  "name": "Unires",
+  "description": "Universal resources API",
+  "authors": [
+    "falseresync"
+  ],
+  "contact": {
+    "homepage": "https://unires.falseresync.ru",
+    "sources": "https://github.com/falseresync/unires",
+    "issues": "https://github.com/falseresync/unires/issues"
+  },
+
+  "license": "MIT",
+  "icon": "assets/unires/icon.png",
+
+  "environment": "*",
+  "entrypoints": {
+    "rrp:pregen": [
+      "ru.falseresync.unires.common.UniresPreGen"
+    ],
+    "unires": [
+      "ru.falseresync.unires.common.UniresDefaults"
+    ],
+    "main": [
+      "ru.falseresync.unires.common.Unires"
+    ],
+    "client": [
+      "ru.falseresync.unires.client.UniresClient"
+    ]
+  },
+  "mixins": [
+    "unires.mixins.json"
+  ],
+
+  "depends": {
+    "fabricloader": ">=0.7.4",
+    "fabric": "*",
+    "minecraft": "1.16.x"
+  }
+}
