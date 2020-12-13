@@ -12,7 +12,7 @@ import ru.falseresync.unires.common.resource.feature.ItemFeature;
 import ru.falseresync.unires.common.resource.feature.OreFeature;
 import ru.falseresync.unires.common.resource.type.GemResourceType;
 import ru.falseresync.unires.common.resource.type.MetalResourceType;
-import ru.falseresync.unires.common.resource.type.OreMetalResourceType;
+import ru.falseresync.unires.common.resource.type.MetalWithOreResourceType;
 
 public class UniresDefaults implements UniresApi {
     @Override
@@ -34,7 +34,7 @@ public class UniresDefaults implements UniresApi {
     @Override
     public void registerResourceTypes(UniresRegistry<ResourceType> registry) {
         registry.register(new Identifier("unires", "metal"), new MetalResourceType());
-        registry.register(new Identifier("unires", "ore_metal"), new OreMetalResourceType());
+        registry.register(new Identifier("unires", "ore_metal"), new MetalWithOreResourceType());
         registry.register(new Identifier("unires", "gem"), new GemResourceType());
     }
 
